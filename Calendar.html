@@ -1,100 +1,67 @@
 <html>
     <head>
-        <title>Porirua U3A Homepage</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
                 margin: 0;
                 padding: 0;
             }
-            #outer {
-                max-width: 960px;
-                margin: auto;
-                background-color: #f9f9f9;
-            }
+            
             .container {
-                display: flex;
-                flex-wrap: wrap;
-                max-width: 100%;   
-                border: 2px solid #CCC;
+                max-width: 960px;
+                margin: 0 auto;
+                padding: 5px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                align-items: center;
+            }
+            
+            .image {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+            
+            .textbox {
+                width: calc(100% - 10px);
+                min-height: 10em;
+                resize: none;
+                margin: 0 5px;
+                border: 1px solid #ddd;
                 border-radius: 5px;
                 padding: 5px;
-            }
-            .top-picture {
-                max-width: 100%;
-                height: auto;
-            }
-            .content-wrapper {
-                max-width: 100%;
-            }
-            .content {
-                display: flex;
-                flex-direction: row;
-                flex: 1;
-            }
-            .buttons {
-                display: flex;
-                flex-direction: column;
-            }
-            .button-table {
-                border-collapse: collapse; /* Merge borders of table cells */
-            }
-            .button-table td {
-                padding: 10px; /* Add spacing around buttons */
-                border: none; /* Remove cell borders */
-            }
-            .button-table button {
-                width: 100%; /* Make buttons occupy full cell width */
-            }
-            .button {
-                /*display: inline-block;*/
-	        display: flex;
-	        flex-direction: column;
-                padding: 10px 10px;
-                background-color: #4CAF50;
-                color: #fff;
-                text-decoration: none;
-                border-radius: 6px;
-                transition: background-color 0.3s;
-            }
-            .button:hover {
-                background-color: #45a049;
-            }
-            #wrapper {
-                margin-top: 10px;
-                flex: 1;
-            }
-            .text-box {
-                /*width: 100%;*/
-                /*min-width: 780px;*/
-                width: 80vw;
-                max-width: 780px;
-                background-color: #f0f0f0;
-                border: 1px solid #ddd;
-                padding: 10px;
-                /*margin: 0 auto;*/
+                font-size: 16px;
+                background-color: #f8f8f8;
                 box-sizing: border-box;
                 word-wrap: break-word;
                 overflow-wrap: break-word;
                 overflow: auto;
+                
             }
-            @media (max-width: 768px) {
-                .content {
-                    flex-direction: column;
-                }
-                .top-picture,
-                .buttons,
-                .text-box {
-                    width: 100%;
-                    max-width: none;
-                }
+
+            .buttons {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
             }
-	   #calendar th {
+            
+            .button {
+                flex: 1;
+                margin: 3px;
+                padding: 3px;
+                background-color: #c8f0ff;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 18px;
+                text-align: center;
+                line-height: 1.2;
+                width: 120px;
+            }
+            #calendar th {
 		text-align: left;
 		border: 1px solid #c0c000;
 		white-space: nowrap;
 	    }
-	</style>
+        </style>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('Button1').addEventListener('click', function1);
@@ -118,8 +85,7 @@
                     window.location.href = 'https://poriruau3a.github.io/Website/Contacts.html';
                 }
             });
-        
-	const date = new Date();
+            const date = new Date();
    	const year = date.getFullYear();
    	const startOfYear = new Date(year, 0, 1);
    	const diffInMilliseconds = date - startOfYear;
@@ -149,137 +115,22 @@
                 }
             }
         }
-    </script>
-
+        </script>
     </head>
-    <body onload=showing("5t5u5v5w5x5y5z5A5B5C5D5E5F5G5H5I5J5K5L5M5N5O5P5Q5R5S5T5U5V5W5X6a6b6c6d6e6f6g6h6i6j6k6l6m6n6o6p6q6r6s6t6u6v6w6x6y6z6A6B6C6D6E6F6G")>
-      <div id="outer">
+    <body onload=showing("5L5M5N5O5P5Q5R5S5T5U5V5W5X6a6b6c6d6e6f6g6h6i6j6k6l6m6n6o6p6q6r6s6t6u6v6w6x6y6z6A6B6C6D6E6F6G6H6I6J6K6L6M6N6O6P6Q6R6S6T6U6V6W6X7a")>
         <div class="container">
-            <img src="jpg/PoriruaManaDay.jpg" alt="Top Picture" class="top-picture">
-            <div class="content-wrapper">
-                <div class="content">
-                    <div class="buttons">
-                        <table class="button-table">
-                            <tr><td><button class="button" id="Button1">Home</button></td></tr>
-                            <tr><td><button class="button" id="Button2">Group Events</button></td></tr>
-                            <tr><td><button class="button" id="Button3">Newsletters</button></td></tr>
-                            <tr><td><button class="button" id="Button4">Meetings</button></td></tr>
-                            <tr><td><button class="button" id="Button5">Contacts</button><//td></tr>
-                        </table> 
-                    </div>
-                <div id="wrapper">
-                    <div class="text-box">
-                        <h2 style="color: #3366ff;" align=center>PORIRUA U3A CALENDAR 2023</h2>
-<table id="calendar">
+            <img class="image" src="jpg/PoriruaSheds.jpg" alt="Image">
+            <div class="buttons">
+                <button class="button" id="Button1">Home</button>
+                <button class="button" id="Button2">Group<br>Events</button>
+                <button class="button" id="Button3">News<br>letters</button>
+                <button class="button" id="Button4">Meetings</button>
+                <button class="button" id="Button5">Contacts</button>
+            </div>
+            <div class="textbox" readonly>
+                <h2 style="color: #3366ff;" align=center>PORIRUA U3A CALENDAR 2023</h2>
+<div align="center"><table id="calendar">
 <tbody>
-<tr id="5t">
-<th>Tue, 26 Sep</th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-<tr id="5u">
-<th>Wed, 27 Sep</th>
-<th>10:00 AM<br>1:30 PM</th>
-<th><a href="https://poriruau3a.github.io/Website/jpg/Garden.jpg">Garden</a><br><a href="https://poriruau3a.github.io/Website/jpg/Mahjong.jpg">Mahjong</a></th>
-<th>Various gardens / <a href="https://poriruau3a.github.io/Website/jpg/St Mary's Anglican Church.jpg">St Mary's Anglican Church</a><br><a href="https://poriruau3a.github.io/Website/jpg/Plimmerton Croquet Club.jpg">Plimmerton Croquet Club</a>, Ulric Street</th>
-</tr>
-<tr id="5v">
-<th>Thu, 28 Sep</th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-<tr id="5w">
-<th>Fri, 29 Sep</th>
-<th>10:00 AM<br>10:00 AM</th>
-<th><a href="https://poriruau3a.github.io/Website/jpg/Scrabble.jpg">Scrabble</a><br><a href="https://poriruau3a.github.io/Website/jpg/Tai-Chi.jpg">Tai-Chi</a></th>
-<th>Member's Home<br><a href="https://poriruau3a.github.io/Website/jpg/Tawa Union Church.jpg">Tawa Union Church</a>, Elena Place, Tawa</th>
-</tr>
-<tr id="5x" bgcolor=#c0ffff>
-<th>Sat, 30 Sep</th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-<tr id="5y" bgcolor=#c0ffff>
-<th>Sun, 01 Oct</th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-<tr id="5z">
-<th>Mon, 02 Oct</th>
-<th>9:30 AM<br>9:30 AM<br>10:00 AM</th>
-<th><a href="https://poriruau3a.github.io/Website/jpg/Bridge.jpg">Bridge</a><br><a href="https://poriruau3a.github.io/Website/jpg/Walking.jpg">Walking</a><br><a href="https://poriruau3a.github.io/Website/jpg/Science.jpg">Science</a></th>
-<th><a href="https://poriruau3a.github.io/Website/jpg/Plimmerton Croquet Club.jpg">Plimmerton Croquet Club</a>, Ulric Street<br>Specified place each week<br><a href="https://poriruau3a.github.io/Website/jpg/Titahi Bay Community Church.jpg">Titahi Bay Community Church</a></th>
-</tr>
-<tr id="5A">
-<th>Tue, 03 Oct</th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-<tr id="5B">
-<th>Wed, 04 Oct</th>
-<th>1:30 PM</th>
-<th><a href="https://poriruau3a.github.io/Website/jpg/Mahjong.jpg">Mahjong</a></th>
-<th><a href="https://poriruau3a.github.io/Website/jpg/Plimmerton Croquet Club.jpg">Plimmerton Croquet Club</a>, Ulric Street</th>
-</tr>
-<tr id="5C">
-<th>Thu, 05 Oct</th>
-<th>10:00 AM</th>
-<th><a href="https://poriruau3a.github.io/Website/jpg/These Changing Times.jpg">These Changing Times</a></th>
-<th>Member's Home</th>
-</tr>
-<tr id="5D">
-<th>Fri, 06 Oct</th>
-<th>10:00 AM</th>
-<th><a href="https://poriruau3a.github.io/Website/jpg/Tai-Chi.jpg">Tai-Chi</a></th>
-<th><a href="https://poriruau3a.github.io/Website/jpg/Tawa Union Church.jpg">Tawa Union Church</a>, Elena Place, Tawa</th>
-</tr>
-<tr id="5E" bgcolor=#c0ffff>
-<th>Sat, 07 Oct</th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-<tr id="5F" bgcolor=#c0ffff>
-<th>Sun, 08 Oct</th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-<tr id="5G">
-<th>Mon, 09 Oct</th>
-<th>9:30 AM<br>9:30 AM</th>
-<th><a href="https://poriruau3a.github.io/Website/jpg/Bridge.jpg">Bridge</a><br><a href="https://poriruau3a.github.io/Website/jpg/Walking.jpg">Walking</a></th>
-<th><a href="https://poriruau3a.github.io/Website/jpg/Plimmerton Croquet Club.jpg">Plimmerton Croquet Club</a>, Ulric Street<br>Specified place each week</th>
-</tr>
-<tr id="5H">
-<th>Tue, 10 Oct</th>
-<th>10:00 AM</th>
-<th><a href="https://poriruau3a.github.io/Website/jpg/Book Discussion 1.jpg">Book Discussion 1</a></th>
-<th>Member's Home</th>
-</tr>
-<tr id="5I">
-<th>Wed, 11 Oct</th>
-<th>1:30 PM</th>
-<th><a href="https://poriruau3a.github.io/Website/jpg/Mahjong.jpg">Mahjong</a></th>
-<th><a href="https://poriruau3a.github.io/Website/jpg/Plimmerton Croquet Club.jpg">Plimmerton Croquet Club</a>, Ulric Street</th>
-</tr>
-<tr id="5J">
-<th>Thu, 12 Oct</th>
-<th>1:30 PM</th>
-<th><a href="https://poriruau3a.github.io/Website/jpg/Book Discussion 2.jpg">Book Discussion 2</a></th>
-<th>Member's Home</th>
-</tr>
-<tr id="5K">
-<th>Fri, 13 Oct</th>
-<th>10:00 AM<br>10:00 AM<br>10:00 AM</th>
-<th><a href="https://poriruau3a.github.io/Website/jpg/Play Reading.jpg">Play Reading</a><br><a href="https://poriruau3a.github.io/Website/jpg/Scrabble.jpg">Scrabble</a><br><a href="https://poriruau3a.github.io/Website/jpg/Tai-Chi.jpg">Tai-Chi</a></th>
-<th>To be confirmed<br>Member's Home<br><a href="https://poriruau3a.github.io/Website/jpg/Tawa Union Church.jpg">Tawa Union Church</a>, Elena Place, Tawa</th>
-</tr>
 <tr id="5L" bgcolor=#c0ffff>
 <th>Sat, 14 Oct</th>
 <th></th>
@@ -444,9 +295,9 @@
 </tr>
 <tr id="6o">
 <th>Fri, 10 Nov</th>
-<th>10:00 AM</th>
-<th><a href="https://poriruau3a.github.io/Website/jpg/Play Reading.jpg">Play Reading</a></th>
-<th>To be confirmed</th>
+<th>10:00 AM<br>10:00 AM<br>10:00 AM</th>
+<th><a href="https://poriruau3a.github.io/Website/jpg/Play Reading.jpg">Play Reading</a><br><a href="https://poriruau3a.github.io/Website/jpg/Scrabble.jpg">Scrabble</a><br><a href="https://poriruau3a.github.io/Website/jpg/Tai-Chi.jpg">Tai-Chi</a></th>
+<th>To be confirmed<br>Member's Home<br><a href="https://poriruau3a.github.io/Website/jpg/Tawa Union Church.jpg">Tawa Union Church</a>, Elena Place, Tawa</th>
 </tr>
 <tr id="6p" bgcolor=#c0ffff>
 <th>Sat, 11 Nov</th>
@@ -462,39 +313,39 @@
 </tr>
 <tr id="6r">
 <th>Mon, 13 Nov</th>
-<th></th>
-<th></th>
-<th></th>
+<th>9:30 AM<br>9:30 AM<br>10:00 AM</th>
+<th><a href="https://poriruau3a.github.io/Website/jpg/Bridge.jpg">Bridge</a><br><a href="https://poriruau3a.github.io/Website/jpg/Walking.jpg">Walking</a><br><a href="https://poriruau3a.github.io/Website/jpg/Science.jpg">Science</a></th>
+<th><a href="https://poriruau3a.github.io/Website/jpg/Plimmerton Croquet Club.jpg">Plimmerton Croquet Club</a>, Ulric Street<br>Specified place each week<br><a href="https://poriruau3a.github.io/Website/jpg/Titahi Bay Community Church.jpg">Titahi Bay Community Church</a></th>
 </tr>
 <tr id="6s">
 <th>Tue, 14 Nov</th>
-<th></th>
-<th></th>
-<th></th>
+<th>10:00 AM</th>
+<th><a href="https://poriruau3a.github.io/Website/jpg/Book Discussion 1.jpg">Book Discussion 1</a></th>
+<th>Member's Home</th>
 </tr>
 <tr id="6t">
 <th>Wed, 15 Nov</th>
-<th></th>
-<th></th>
-<th></th>
+<th>10:00 AM<br>1:30 PM</th>
+<th><a href="https://poriruau3a.github.io/Website/jpg/Creative Writing.jpg">Creative Writing</a><br><a href="https://poriruau3a.github.io/Website/jpg/Mahjong.jpg">Mahjong</a></th>
+<th>Member's Home<br><a href="https://poriruau3a.github.io/Website/jpg/Plimmerton Croquet Club.jpg">Plimmerton Croquet Club</a>, Ulric Street</th>
 </tr>
 <tr id="6u">
 <th>Thu, 16 Nov</th>
-<th></th>
-<th></th>
-<th></th>
+<th>10:00 AM</th>
+<th><a href="https://poriruau3a.github.io/Website/jpg/These Changing Times.jpg">These Changing Times</a></th>
+<th>Member's Home</th>
 </tr>
 <tr id="6v">
 <th>Fri, 17 Nov</th>
-<th></th>
-<th></th>
-<th></th>
+<th>10:00 AM<br><font color="c000c0">1:00 PM</font></th>
+<th><a href="https://poriruau3a.github.io/Website/jpg/Tai-Chi.jpg">Tai-Chi</a><br><font color="c000c0">Quarterly Meeting + AGM</font></th>
+<th><a href="https://poriruau3a.github.io/Website/jpg/Tawa Union Church.jpg">Tawa Union Church</a>, Elena Place, Tawa<br><font color="c000c0">North Baptist Church, Whitby</font></th>
 </tr>
 <tr id="6w" bgcolor=#c0ffff>
 <th>Sat, 18 Nov</th>
-<th></th>
-<th></th>
-<th></th>
+<th>Varies</th>
+<th><a href="https://poriruau3a.github.io/Website/jpg/Film Group.jpg">Film Group at the Lighthouse</a></th>
+<th><a href="https://poriruau3a.github.io/Website/jpg/The Lighthouse.jpg">The Lighthouse</a>, Pauahatahanui</th>
 </tr>
 <tr id="6x" bgcolor=#c0ffff>
 <th>Sun, 19 Nov</th>
@@ -504,9 +355,9 @@
 </tr>
 <tr id="6y">
 <th>Mon, 20 Nov</th>
-<th></th>
-<th></th>
-<th></th>
+<th>9:30 AM<br>9:30 AM</th>
+<th><a href="https://poriruau3a.github.io/Website/jpg/Bridge.jpg">Bridge</a><br><a href="https://poriruau3a.github.io/Website/jpg/Walking.jpg">Walking</a></th>
+<th><a href="https://poriruau3a.github.io/Website/jpg/Plimmerton Croquet Club.jpg">Plimmerton Croquet Club</a>, Ulric Street<br>Specified place each week</th>
 </tr>
 <tr id="6z">
 <th>Tue, 21 Nov</th>
@@ -516,9 +367,9 @@
 </tr>
 <tr id="6A">
 <th>Wed, 22 Nov</th>
-<th></th>
-<th></th>
-<th></th>
+<th>10:00 AM<br>1:30 PM</th>
+<th><a href="https://poriruau3a.github.io/Website/jpg/Garden.jpg">Garden</a><br><a href="https://poriruau3a.github.io/Website/jpg/Mahjong.jpg">Mahjong</a></th>
+<th>Various gardens / <a href="https://poriruau3a.github.io/Website/jpg/St Mary's Anglican Church.jpg">St Mary's Anglican Church</a><br><a href="https://poriruau3a.github.io/Website/jpg/Plimmerton Croquet Club.jpg">Plimmerton Croquet Club</a>, Ulric Street</th>
 </tr>
 <tr id="6B">
 <th>Thu, 23 Nov</th>
@@ -528,9 +379,9 @@
 </tr>
 <tr id="6C">
 <th>Fri, 24 Nov</th>
-<th></th>
-<th></th>
-<th></th>
+<th>10:00 AM<br>10:00 AM</th>
+<th><a href="https://poriruau3a.github.io/Website/jpg/Scrabble.jpg">Scrabble</a><br><a href="https://poriruau3a.github.io/Website/jpg/Tai-Chi.jpg">Tai-Chi</a></th>
+<th>Member's Home<br><a href="https://poriruau3a.github.io/Website/jpg/Tawa Union Church.jpg">Tawa Union Church</a>, Elena Place, Tawa</th>
 </tr>
 <tr id="6D" bgcolor=#c0ffff>
 <th>Sat, 25 Nov</th>
@@ -556,11 +407,116 @@
 <th></th>
 <th></th>
 </tr>
-</tbody></table>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    </div>
-                </div?
+<tr id="6H">
+<th>Wed, 29 Nov</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="6I">
+<th>Thu, 30 Nov</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="6J">
+<th>Fri, 01 Dec</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="6K" bgcolor=#c0ffff>
+<th>Sat, 02 Dec</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="6L" bgcolor=#c0ffff>
+<th>Sun, 03 Dec</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="6M">
+<th>Mon, 04 Dec</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="6N">
+<th>Tue, 05 Dec</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="6O">
+<th>Wed, 06 Dec</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="6P">
+<th>Thu, 07 Dec</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="6Q">
+<th>Fri, 08 Dec</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="6R" bgcolor=#c0ffff>
+<th>Sat, 09 Dec</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="6S" bgcolor=#c0ffff>
+<th>Sun, 10 Dec</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="6T">
+<th>Mon, 11 Dec</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="6U">
+<th>Tue, 12 Dec</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="6V">
+<th>Wed, 13 Dec</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="6W">
+<th>Thu, 14 Dec</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="6X">
+<th>Fri, 15 Dec</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="7a" bgcolor=#c0ffff>
+<th>Sat, 16 Dec</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</tbody></table></div>
             </div>
         </div>
-      </div>
     </body>
 </html>

@@ -1,95 +1,63 @@
 <html>
     <head>
-        <title>Porirua U3A Homepage</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
                 margin: 0;
                 padding: 0;
             }
-            #outer {
-                max-width: 960px;
-                margin: auto;
-                background-color: #f9f9f9;
-            }
+            
             .container {
-                display: flex;
-                flex-wrap: wrap;
-                max-width: 100%;   
-                border: 2px solid #CCC;
+                max-width: 960px;
+                margin: 0 auto;
+                padding: 5px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                align-items: center;
+            }
+            
+            .image {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+            
+            .textbox {
+                width: calc(100% - 10px);
+                min-height: 10em;
+                resize: none;
+                margin: 0 5px;
+                border: 1px solid #ddd;
                 border-radius: 5px;
                 padding: 5px;
-            }
-            .top-picture {
-                max-width: 100%;
-                height: auto;
-            }
-            .content-wrapper {
-                max-width: 100%;
-            }
-            .content {
-                display: flex;
-                flex-direction: row;
-                flex: 1;
-            }
-            .buttons {
-                display: flex;
-                flex-direction: column;
-            }
-            .button-table {
-                border-collapse: collapse; /* Merge borders of table cells */
-            }
-            .button-table td {
-                padding: 10px; /* Add spacing around buttons */
-                border: none; /* Remove cell borders */
-            }
-            .button-table button {
-                width: 100%; /* Make buttons occupy full cell width */
-            }
-            .button {
-                /*display: inline-block;*/
-	        display: flex;
-	        flex-direction: column;
-                padding: 10px 10px;
-                background-color: #4CAF50;
-                color: #fff;
-                text-decoration: none;
-                border-radius: 6px;
-                transition: background-color 0.3s;
-            }
-            .button:hover {
-                background-color: #45a049;
-            }
-            #wrapper {
-                margin-top: 10px;
-                flex: 1;
-            }
-            .text-box {
-                /*width: 100%;*/
-                /*min-width: 780px;*/
-                width: 80vw;
-                max-width: 780px;
-                background-color: #f0f0f0;
-                border: 1px solid #ddd;
-                padding: 10px;
-                /*margin: 0 auto;*/
+                font-size: 16px;
+                background-color: #f8f8f8;
                 box-sizing: border-box;
                 word-wrap: break-word;
                 overflow-wrap: break-word;
                 overflow: auto;
+                
             }
-            @media (max-width: 768px) {
-                .content {
-                    flex-direction: column;
-                }
-                .top-picture,
-                .buttons,
-                .text-box {
-                    width: 100%;
-                    max-width: none;
-                }
+
+            .buttons {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
             }
-	</style>
+            
+            .button {
+                flex: 1;
+                margin: 3px;
+                padding: 3px;
+                background-color: #c8f0ff;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 18px;
+                text-align: center;
+                line-height: 1.2;
+                width: 120px;
+            }
+            
+        </style>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('Button1').addEventListener('click', function1);
@@ -113,38 +81,21 @@
                     window.location.href = 'https://poriruau3a.github.io/Website/Contacts.html';
                 }
             });
-            var images = [], x = -1;
-            images[0] = "jpg/PoriruaManaDay.jpg";
-            images[1] = "jpg/PoriruaSheds.jpg";
-            images[2] = "jpg/PoriruaSunset.jpg";
-            images[3] = "jpg/PoriruaMural.jpg";
-            function nextImage() {
-                x = (x === images.length - 1) ? 0 : x + 1;
-                document.getElementById("img").src = images[x];
-            }
-            function startTimer() {
-                setInterval(nextImage, 5000);
-            }
+            
         </script>
     </head>
-    <body onload="startTimer()">
-      <div id="outer">
+    <body>
         <div class="container">
-            <img id="img" src="jpg/PoriruaManaDay.jpg" class="top-picture">
-            <div class="content-wrapper">
-                <div class="content">
-                    <div class="buttons">
-                        <table class="button-table">
-                            <tr><td><button class="button" id="Button1">Home</button></td></tr>
-                            <tr><td><button class="button" id="Button2">Group Events</button></td></tr>
-                            <tr><td><button class="button" id="Button3">Newsletters</button></td></tr>
-                            <tr><td><button class="button" id="Button4">Meetings</button></td></tr>
-                            <tr><td><button class="button" id="Button5">Contacts</button><//td></tr>
-                        </table> 
-                    </div>
-                <div id="wrapper">
-                    <div class="text-box">
-                        <h2><span style="color: #3366ff;"><b>Welcome To Porirua U3A (Inc)</b></span></h2>
+            <img class="image" src="jpg/PoriruaManaDay.jpg" alt="Image">
+            <div class="buttons">
+                <button class="button" id="Button1">Home</button>
+                <button class="button" id="Button2">Group<br>Events</button>
+                <button class="button" id="Button3">News<br>letters</button>
+                <button class="button" id="Button4">Meetings</button>
+                <button class="button" id="Button5">Contacts</button>
+            </div>
+            <div class="textbox" readonly>
+                <h1><span style="color: #3366ff;"><b>Welcome To Porirua U3A (Inc)</b></span></h1>
 
 <p>Our group is part of an international organisation founded in France in 1973 and started in New Zealand in 1985 with the aim of providing a learning for life structure specifically for those in the older age group who wish to continue to learn and have fun socially. Porirua U3A (formerly Mana U3A) was established in 1991. We confer no degrees but learn and join interest groups for the fun of it. Our current membership of some 140 comes from Tawa to Kapiti.</p>
 
@@ -159,11 +110,8 @@
 Porirua U3A (Inc)<br>
 9 Ernest Street<br>
 Ranui<br>
-Porirua 5024<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    </div>
-                </div?
+Porirua 5024<br>
             </div>
         </div>
-      </div>
     </body>
 </html>

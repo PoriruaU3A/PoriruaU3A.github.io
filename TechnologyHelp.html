@@ -1,95 +1,63 @@
 <html>
     <head>
-        <title>Porirua U3A Homepage</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
                 margin: 0;
                 padding: 0;
             }
-            #outer {
-                max-width: 960px;
-                margin: auto;
-                background-color: #f9f9f9;
-            }
+            
             .container {
-                display: flex;
-                flex-wrap: wrap;
-                max-width: 100%;   
-                border: 2px solid #CCC;
+                max-width: 960px;
+                margin: 0 auto;
+                padding: 5px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                align-items: center;
+            }
+            
+            .image {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+            
+            .textbox {
+                width: calc(100% - 10px);
+                min-height: 10em;
+                resize: none;
+                margin: 0 5px;
+                border: 1px solid #ddd;
                 border-radius: 5px;
                 padding: 5px;
-            }
-            .top-picture {
-                max-width: 100%;
-                height: auto;
-            }
-            .content-wrapper {
-                max-width: 100%;
-            }
-            .content {
-                display: flex;
-                flex-direction: row;
-                flex: 1;
-            }
-            .buttons {
-                display: flex;
-                flex-direction: column;
-            }
-            .button-table {
-                border-collapse: collapse; /* Merge borders of table cells */
-            }
-            .button-table td {
-                padding: 10px; /* Add spacing around buttons */
-                border: none; /* Remove cell borders */
-            }
-            .button-table button {
-                width: 100%; /* Make buttons occupy full cell width */
-            }
-            .button {
-                /*display: inline-block;*/
-	        display: flex;
-	        flex-direction: column;
-                padding: 10px 10px;
-                background-color: #4CAF50;
-                color: #fff;
-                text-decoration: none;
-                border-radius: 6px;
-                transition: background-color 0.3s;
-            }
-            .button:hover {
-                background-color: #45a049;
-            }
-            #wrapper {
-                margin-top: 10px;
-                flex: 1;
-            }
-            .text-box {
-                /*width: 100%;*/
-                /*min-width: 780px;*/
-                width: 80vw;
-                max-width: 780px;
-                background-color: #f0f0f0;
-                border: 1px solid #ddd;
-                padding: 10px;
-                /*margin: 0 auto;*/
+                font-size: 16px;
+                background-color: #f8f8f8;
                 box-sizing: border-box;
                 word-wrap: break-word;
                 overflow-wrap: break-word;
                 overflow: auto;
+                
             }
-            @media (max-width: 768px) {
-                .content {
-                    flex-direction: column;
-                }
-                .top-picture,
-                .buttons,
-                .text-box {
-                    width: 100%;
-                    max-width: none;
-                }
+
+            .buttons {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
             }
-	</style>
+            
+            .button {
+                flex: 1;
+                margin: 3px;
+                padding: 3px;
+                background-color: #c8f0ff;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 18px;
+                text-align: center;
+                line-height: 1.2;
+                width: 120px;
+            }
+            
+        </style>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('Button1').addEventListener('click', function1);
@@ -113,26 +81,21 @@
                     window.location.href = 'https://poriruau3a.github.io/Website/Contacts.html';
                 }
             });
+            
         </script>
     </head>
     <body>
-      <div id="outer">
         <div class="container">
-            <img src="jpg/PoriruaManaDay.jpg" alt="Top Picture" class="top-picture">
-            <div class="content-wrapper">
-                <div class="content">
-                    <div class="buttons">
-                        <table class="button-table">
-                            <tr><td><button class="button" id="Button1">Home</button></td></tr>
-                            <tr><td><button class="button" id="Button2">Group Events</button></td></tr>
-                            <tr><td><button class="button" id="Button3">Newsletters</button></td></tr>
-                            <tr><td><button class="button" id="Button4">Meetings</button></td></tr>
-                            <tr><td><button class="button" id="Button5">Contacts</button><//td></tr>
-                        </table> 
-                    </div>
-                <div id="wrapper">
-                    <div class="text-box">
-                        <h2><span style="color: #3366ff;"><b>Technology Help For Senoirs</b></span></h2>
+            <img class="image" src="jpg/PoriruaManaDay.jpg" alt="Image">
+            <div class="buttons">
+                <button class="button" id="Button1">Home</button>
+                <button class="button" id="Button2">Group<br>Events</button>
+                <button class="button" id="Button3">News<br>letters</button>
+                <button class="button" id="Button4">Meetings</button>
+                <button class="button" id="Button5">Contacts</button>
+            </div>
+            <div class="textbox" readonly>
+                <h2><span style="color: #3366ff;"><b>Technology Help For Senoirs</b></span></h2>
 
 <p style="text-align: left;">Finding it challenging to get the best from your Smart Phone, Tablet, or new operating system, software and Apps?</p>
 <p style="text-align: left;">Watch this space for advice and website links to sites that help explain how to do what you want with your modern technological devices and applications.</p>
@@ -168,11 +131,8 @@ My choice is <a href="http://www.gutenberg.org/">www.gutenberg.org/</a>
 
 Some e-books require a particular format that requires a conversion from the format of the e-book you have to one the e-book reader can handle. See <a href="http://ebook.online-convert.com/">http://ebook.online-convert.com/</a>
 
-</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    </div>
-                </div?
+</p>
             </div>
         </div>
-      </div>
     </body>
 </html>
