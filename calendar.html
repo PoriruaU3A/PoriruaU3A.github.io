@@ -1,0 +1,540 @@
+<html>
+    <head>
+        <title>Porirua U3A</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .container {
+                max-width: 960px;
+                margin: 0 auto;
+                padding: 5px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                align-items: center;
+            }
+            
+            .image {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+            
+            .textbox {
+                width: calc(100% - 10px);
+                min-height: 10em;
+                resize: none;
+                margin: 0 5px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                padding: 5px;
+                font-size: 16px;
+                background-color: #f8f8f8;
+                box-sizing: border-box;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                overflow: auto;
+                
+            }
+
+            .buttons {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .button {
+                flex: 1;
+                margin: 3px;
+                padding: 3px;
+                background-color: #c8f0ff;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 18px;
+                text-align: center;
+                line-height: 1.2;
+                width: 120px;
+            }
+            #calendar th {
+		text-align: left;
+		border: 1px solid #c0c000;
+		white-space: nowrap;
+	    }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.getElementById('Button1').addEventListener('click', function1);
+                document.getElementById('Button2').addEventListener('click', function2);
+                document.getElementById('Button3').addEventListener('click', function3);
+                document.getElementById('Button4').addEventListener('click', function4);
+                document.getElementById('Button5').addEventListener('click', function5);
+                function function1() {
+                    window.location.href = "index.html";
+                }
+                function function2() {
+                    window.location.href = "groupevents.html";
+                }
+                function function3() {
+                    window.location.href = "newsletters.html";
+                }
+                function function4() {
+                    window.location.href = "meetings.html";
+                }
+                function function5() {
+                    window.location.href = "contacts.html";
+                }
+            });
+            const date = new Date();
+   	const year = date.getFullYear();
+   	const startOfYear = new Date(year, 0, 1);
+   	const diffInMilliseconds = date - startOfYear;
+   	const julianDayOfYear = Math.floor(diffInMilliseconds / (24 * 60 * 60 * 1000)) + 1;
+	function JulianDayEncode(jday) {
+	  const hi = Math.floor(jday / 50);
+	  const lo = jday % 50;
+	  const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	  return hi.toString() + letters.charAt(lo);
+	}
+	const jday = JulianDayEncode(julianDayOfYear);
+        function showing(dayrange) {
+	    const originalString = dayrange;
+	    const searchString = jday;
+            const startIdx = originalString.indexOf(searchString);
+            const desiredLength = 32 * 2;
+	    const jrange = originalString.substring(startIdx, startIdx + desiredLength);
+            var table = document.getElementById("calendar");
+            var rows = table.getElementsByTagName("tr");
+            for (var i = 0; i < rows.length; i++) {
+                var row = rows[i];
+                var rowId = row.getAttribute("id");
+                if (jrange.includes(rowId)) {
+                        row.style.display = "";
+                } else {
+                        row.style.display = "none";
+                }
+            }
+        }
+        </script>
+    </head>
+    <body onload=showing("4p4q4r4s4t4u4v4w4x4y4z4A4B4C4D4E4F4G4H4I4J4K4L4M4N4O4P4Q4R4S4T4U4V4W4X5a5b5c5d5e5f5g5h5i5j5k5l5m5n5o5p5q5r5s5t5u5v5w5x5y5z5A5B5C")>
+        <div class="container">
+            <img class="image" src="jpg/PoriruaSheds.jpg" alt="Image">
+            <div class="buttons">
+                <button class="button" id="Button1">Home</button>
+                <button class="button" id="Button2">Group<br>Events</button>
+                <button class="button" id="Button3">News<br>letters</button>
+                <button class="button" id="Button4">Meetings</button>
+                <button class="button" id="Button5">Contacts</button>
+            </div>
+            <div class="textbox" readonly>
+                <h2 style="color: #3366ff;" align=center>PORIRUA U3A CALENDAR 2024</h2>
+<div align="center"><table id="calendar">
+<tbody>
+<tr id="4p">
+<th>Fri, 02 Aug</th>
+<th>10:00 AM<br>10:00 AM</th>
+<th><a href="jpg/Scrabble.jpg">Scrabble</a><br><a href="jpg/Tai-Chi.jpg">Tai-Chi</a></th>
+<th>Member's Home<br><a href="jpg/Tawa Union Church.jpg">Tawa Union Church</a>, Elena Place, Tawa</th>
+</tr>
+<tr id="4q" bgcolor=#c0ffff>
+<th>Sat, 03 Aug</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="4r" bgcolor=#c0ffff>
+<th>Sun, 04 Aug</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="4s">
+<th>Mon, 05 Aug</th>
+<th>9:30 AM<br>9:30 AM</th>
+<th><a href="jpg/Bridge.jpg">Bridge</a><br><a href="jpg/Walking Group.jpg">Walking</a></th>
+<th><a href="jpg/Plimmerton Croquet Club.jpg">Plimmerton Croquet Club</a>, Ulric Street<br>Specified place each week</th>
+</tr>
+<tr id="4t">
+<th>Tue, 06 Aug</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="4u">
+<th>Wed, 07 Aug</th>
+<th>1:30 PM</th>
+<th><a href="jpg/Mahjong.jpg">Mahjong</a></th>
+<th><a href="jpg/Plimmerton Croquet Club.jpg">Plimmerton Croquet Club</a>, Ulric Street</th>
+</tr>
+<tr id="4v">
+<th>Thu, 08 Aug</th>
+<th>1:30 PM</th>
+<th><a href="jpg/Book Discussion 2.jpg">Book Discussion 2</a></th>
+<th>Member's Home</th>
+</tr>
+<tr id="4w">
+<th>Fri, 09 Aug</th>
+<th>10:00 AM<br>10:00 AM</th>
+<th><a href="jpg/Play Reading.jpg">Play Reading</a><br><a href="jpg/Tai-Chi.jpg">Tai-Chi</a></th>
+<th>To be confirmed<br><a href="jpg/Tawa Union Church.jpg">Tawa Union Church</a>, Elena Place, Tawa</th>
+</tr>
+<tr id="4x" bgcolor=#c0ffff>
+<th>Sat, 10 Aug</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="4y" bgcolor=#c0ffff>
+<th>Sun, 11 Aug</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="4z">
+<th>Mon, 12 Aug</th>
+<th>9:30 AM<br>9:30 AM<br>10:00 AM</th>
+<th><a href="jpg/Bridge.jpg">Bridge</a><br><a href="jpg/Walking Group.jpg">Walking</a><br><a href="jpg/Science.jpg">Science</a></th>
+<th><a href="jpg/Plimmerton Croquet Club.jpg">Plimmerton Croquet Club</a>, Ulric Street<br>Specified place each week<br><a href="jpg/Titahi Bay Community Church.jpg">Titahi Bay Community Church</a></th>
+</tr>
+<tr id="4A">
+<th>Tue, 13 Aug</th>
+<th>10:00 AM</th>
+<th><a href="jpg/Book Discussion 1.jpg">Book Discussion 1</a></th>
+<th>Member's Home</th>
+</tr>
+<tr id="4B">
+<th>Wed, 14 Aug</th>
+<th>10:00 AM<br>1:30 PM</th>
+<th><a href="jpg/Astronomy-Cosmology.jpg">Astronomy Cosmology</a><br><a href="jpg/Mahjong.jpg">Mahjong</a></th>
+<th>Member's Home / <a href="jpg/Tawa College.jpg">Tawa College</a> Grounds<br><a href="jpg/Plimmerton Croquet Club.jpg">Plimmerton Croquet Club</a>, Ulric Street</th>
+</tr>
+<tr id="4C">
+<th>Thu, 15 Aug</th>
+<th>10:00 AM<br><font color="c000c0">1:00 PM</font></th>
+<th><a href="jpg/These Changing Times.jpg">These Changing Times</a><br><font color="c000c0">Quarterly Meeting</font></th>
+<th>Member's Home<br><font color="c000c0"><a href="jpg/North Porirua Baptist Church.jpg"><font color="c000c0">North Porirua Baptist Church</font></a>, Whitby</font></th>
+</tr>
+<tr id="4D">
+<th>Fri, 16 Aug</th>
+<th>10:00 AM<br>10:00 AM</th>
+<th><a href="jpg/Scrabble.jpg">Scrabble</a><br><a href="jpg/Tai-Chi.jpg">Tai-Chi</a></th>
+<th>Member's Home<br><a href="jpg/Tawa Union Church.jpg">Tawa Union Church</a>, Elena Place, Tawa</th>
+</tr>
+<tr id="4E" bgcolor=#c0ffff>
+<th>Sat, 17 Aug</th>
+<th>Varies</th>
+<th><a href="jpg/Film Group.jpg">Film Group at the Lighthouse</a></th>
+<th><a href="jpg/The Lighthouse.jpg">The Lighthouse</a>, Pauahatahanui</th>
+</tr>
+<tr id="4F" bgcolor=#c0ffff>
+<th>Sun, 18 Aug</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="4G">
+<th>Mon, 19 Aug</th>
+<th>9:30 AM<br>9:30 AM</th>
+<th><a href="jpg/Bridge.jpg">Bridge</a><br><a href="jpg/Walking Group.jpg">Walking</a></th>
+<th><a href="jpg/Plimmerton Croquet Club.jpg">Plimmerton Croquet Club</a>, Ulric Street<br>Specified place each week</th>
+</tr>
+<tr id="4H">
+<th>Tue, 20 Aug</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="4I">
+<th>Wed, 21 Aug</th>
+<th>10:00 AM<br>1:30 PM</th>
+<th><a href="jpg/Creative Writing.jpg">Creative Writing</a><br><a href="jpg/Mahjong.jpg">Mahjong</a></th>
+<th>Member's Home<br><a href="jpg/Plimmerton Croquet Club.jpg">Plimmerton Croquet Club</a>, Ulric Street</th>
+</tr>
+<tr id="4J">
+<th>Thu, 22 Aug</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="4K">
+<th>Fri, 23 Aug</th>
+<th>10:00 AM</th>
+<th><a href="jpg/Tai-Chi.jpg">Tai-Chi</a></th>
+<th><a href="jpg/Tawa Union Church.jpg">Tawa Union Church</a>, Elena Place, Tawa</th>
+</tr>
+<tr id="4L" bgcolor=#c0ffff>
+<th>Sat, 24 Aug</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="4M" bgcolor=#c0ffff>
+<th>Sun, 25 Aug</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="4N">
+<th>Mon, 26 Aug</th>
+<th>9:30 AM<br>9:30 AM<br>10:00 AM</th>
+<th><a href="jpg/Bridge.jpg">Bridge</a><br><a href="jpg/Walking Group.jpg">Walking</a><br><a href="jpg/Science.jpg">Science</a></th>
+<th><a href="jpg/Plimmerton Croquet Club.jpg">Plimmerton Croquet Club</a>, Ulric Street<br>Specified place each week<br><a href="jpg/Titahi Bay Community Church.jpg">Titahi Bay Community Church</a></th>
+</tr>
+<tr id="4O">
+<th>Tue, 27 Aug</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="4P">
+<th>Wed, 28 Aug</th>
+<th>10:00 AM<br>10:30 AM<br>1:30 PM</th>
+<th><a href="jpg/Astronomy-Cosmology.jpg">Astronomy Cosmology</a><br><a href="jpg/Garden.jpg">Garden</a><br><a href="jpg/Mahjong.jpg">Mahjong</a></th>
+<th>Member's Home / <a href="jpg/Tawa College.jpg">Tawa College</a> Grounds<br>Various gardens / <a href="jpg/St Mary's Anglican Church.jpg">St Mary's Anglican Church</a><br><a href="jpg/Plimmerton Croquet Club.jpg">Plimmerton Croquet Club</a>, Ulric Street</th>
+</tr>
+<tr id="4Q">
+<th>Thu, 29 Aug</th>
+<th>10:00 AM</th>
+<th><a href="jpg/These Changing Times.jpg">These Changing Times</a></th>
+<th>Member's Home</th>
+</tr>
+<tr id="4R">
+<th>Fri, 30 Aug</th>
+<th>10:00 AM<br>10:00 AM</th>
+<th><a href="jpg/Scrabble.jpg">Scrabble</a><br><a href="jpg/Tai-Chi.jpg">Tai-Chi</a></th>
+<th>Member's Home<br><a href="jpg/Tawa Union Church.jpg">Tawa Union Church</a>, Elena Place, Tawa</th>
+</tr>
+<tr id="4S" bgcolor=#c0ffff>
+<th>Sat, 31 Aug</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="4T" bgcolor=#c0ffff>
+<th>Sun, 01 Sep</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="4U">
+<th>Mon, 02 Sep</th>
+<th>9:30 AM<br>9:30 AM</th>
+<th><a href="jpg/Bridge.jpg">Bridge</a><br><a href="jpg/Walking Group.jpg">Walking</a></th>
+<th><a href="jpg/Plimmerton Croquet Club.jpg">Plimmerton Croquet Club</a>, Ulric Street<br>Specified place each week</th>
+</tr>
+<tr id="4V">
+<th>Tue, 03 Sep</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="4W">
+<th>Wed, 04 Sep</th>
+<th>1:30 PM</th>
+<th><a href="jpg/Mahjong.jpg">Mahjong</a></th>
+<th><a href="jpg/Plimmerton Croquet Club.jpg">Plimmerton Croquet Club</a>, Ulric Street</th>
+</tr>
+<tr id="4X">
+<th>Thu, 05 Sep</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="5a">
+<th>Fri, 06 Sep</th>
+<th>10:00 AM</th>
+<th><a href="jpg/Tai-Chi.jpg">Tai-Chi</a></th>
+<th><a href="jpg/Tawa Union Church.jpg">Tawa Union Church</a>, Elena Place, Tawa</th>
+</tr>
+<tr id="5b" bgcolor=#c0ffff>
+<th>Sat, 07 Sep</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="5c" bgcolor=#c0ffff>
+<th>Sun, 08 Sep</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="5d">
+<th>Mon, 09 Sep</th>
+<th>9:30 AM<br>9:30 AM<br>10:00 AM</th>
+<th><a href="jpg/Bridge.jpg">Bridge</a><br><a href="jpg/Walking Group.jpg">Walking</a><br><a href="jpg/Science.jpg">Science</a></th>
+<th><a href="jpg/Plimmerton Croquet Club.jpg">Plimmerton Croquet Club</a>, Ulric Street<br>Specified place each week<br><a href="jpg/Titahi Bay Community Church.jpg">Titahi Bay Community Church</a></th>
+</tr>
+<tr id="5e">
+<th>Tue, 10 Sep</th>
+<th>10:00 AM</th>
+<th><a href="jpg/Book Discussion 1.jpg">Book Discussion 1</a></th>
+<th>Member's Home</th>
+</tr>
+<tr id="5f">
+<th>Wed, 11 Sep</th>
+<th>10:00 AM<br>1:30 PM</th>
+<th><a href="jpg/Astronomy-Cosmology.jpg">Astronomy Cosmology</a><br><a href="jpg/Mahjong.jpg">Mahjong</a></th>
+<th>Member's Home / <a href="jpg/Tawa College.jpg">Tawa College</a> Grounds<br><a href="jpg/Plimmerton Croquet Club.jpg">Plimmerton Croquet Club</a>, Ulric Street</th>
+</tr>
+<tr id="5g">
+<th>Thu, 12 Sep</th>
+<th>10:00 AM<br>1:30 PM</th>
+<th><a href="jpg/These Changing Times.jpg">These Changing Times</a><br><a href="jpg/Book Discussion 2.jpg">Book Discussion 2</a></th>
+<th>Member's Home<br>Member's Home</th>
+</tr>
+<tr id="5h">
+<th>Fri, 13 Sep</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="5i" bgcolor=#c0ffff>
+<th>Sat, 14 Sep</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="5j" bgcolor=#c0ffff>
+<th>Sun, 15 Sep</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="5k">
+<th>Mon, 16 Sep</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="5l">
+<th>Tue, 17 Sep</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="5m">
+<th>Wed, 18 Sep</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="5n">
+<th>Thu, 19 Sep</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="5o">
+<th>Fri, 20 Sep</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="5p" bgcolor=#c0ffff>
+<th>Sat, 21 Sep</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="5q" bgcolor=#c0ffff>
+<th>Sun, 22 Sep</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="5r">
+<th>Mon, 23 Sep</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="5s">
+<th>Tue, 24 Sep</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="5t">
+<th>Wed, 25 Sep</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="5u">
+<th>Thu, 26 Sep</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="5v">
+<th>Fri, 27 Sep</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="5w" bgcolor=#c0ffff>
+<th>Sat, 28 Sep</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="5x" bgcolor=#c0ffff>
+<th>Sun, 29 Sep</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="5y">
+<th>Mon, 30 Sep</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="5z">
+<th>Tue, 01 Oct</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="5A">
+<th>Wed, 02 Oct</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="5B">
+<th>Thu, 03 Oct</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+<tr id="5C">
+<th>Fri, 04 Oct</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</tbody></table></div>
+            </div>
+        </div>
+<!-- Default Statcounter code for Porirua U3A Website
+https://poriruau3a.nz -->
+<script type="text/javascript">
+var sc_project=13022925; 
+var sc_invisible=1; 
+var sc_security="4501792e"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics
+Made Easy - Statcounter" href="https://statcounter.com/"
+target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/13022925/0/4501792e/1/"
+alt="Web Analytics Made Easy - Statcounter"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+    </body>
+</html>
