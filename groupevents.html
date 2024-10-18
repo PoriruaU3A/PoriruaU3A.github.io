@@ -105,10 +105,16 @@
 
 <h1><span style="color: #3366ff;"><b>Upcoming Events</b></span></h1>
 
-<a href="pdf/Flyer for U3A Holocaust Centre Trip.pdf"><big>Holocaust Centre Trip</big></a><br>
-<br>
+<iframe id="link-iframe" src="links.html" width="100%" frameborder="0" onload="resizeIframe(this)"></iframe>
+
             </div>
         </div>
+<script>
+  function resizeIframe(iframe) {
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
+
 <!-- Default Statcounter code for Porirua U3A Website
 https://poriruau3a.nz -->
 <script type="text/javascript">
