@@ -28,11 +28,6 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
 
-      - name: Build project
-        run: |
-          echo "Building project..."
-          # Add your build commands here
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
