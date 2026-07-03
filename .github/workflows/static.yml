@@ -33,8 +33,14 @@ jobs:
         with:
           name: github-pages
           path: |
-            ./
-            !.github/
+            index.html
+            *.html
+            *.css
+            *.js
+            images/
+            css/
+            js/
+            assets/
 
       - name: Deploy to GitHub Pages
         id: deployment
